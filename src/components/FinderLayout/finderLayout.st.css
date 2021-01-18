@@ -1,0 +1,5 @@
+/* finderLayout.st.css CSS API */
+.root {
+  -st-states:
+    gridMode(enum(fullScreenMode, focusMode));
+}

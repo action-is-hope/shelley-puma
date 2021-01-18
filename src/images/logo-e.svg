@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="568px" height="130px" viewBox="0 0 568 130" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Untitled 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-21.8%" y="-85.7%" width="143.6%" height="271.4%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="4" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-27.9%" y="-85.7%" width="155.8%" height="271.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="4" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-21.8%" y="-85.7%" width="143.6%" height="271.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="4" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo" transform="translate(-13.000000, -34.000000)">
+            <text id="INCHES" font-family="Futura-Medium, Futura" font-size="147" font-weight="400" letter-spacing="7.361666" fill="#FFFFFF">
+                <tspan x="0.183489989" y="153">INCH</tspan>
+                <tspan x="411.988064" y="153" letter-spacing="7.412088" fill-opacity="0">E</tspan>
+                <tspan x="502.518316" y="153" letter-spacing="7.412088">S</tspan>
+            </text>
+            <g id="Group-14" opacity="0.880603609" transform="translate(454.000000, 98.792725) scale(1, -1) rotate(-90.000000) translate(-454.000000, -98.792725) translate(398.000000, 65.292725)" fill="#31FFB1">
+                <path d="M84.0764153,30.2342712 L125.076415,30.2342712 C128.942409,30.2342712 132.076415,33.368278 132.076415,37.2342712 L132.076415,37.2342712 C132.076415,41.1002645 128.942409,44.2342712 125.076415,44.2342712 L84.0764153,44.2342712 C80.2104221,44.2342712 77.0764153,41.1002645 77.0764153,37.2342712 L77.0764153,37.2342712 C77.0764153,33.368278 80.2104221,30.2342712 84.0764153,30.2342712 Z" id="Rectangle" filter="url(#filter-1)" transform="translate(104.576415, 37.234271) scale(1, -1) rotate(90.000000) translate(-104.576415, -37.234271) "></path>
+                <path d="M40.5764153,14.7342712 L69.5764153,14.7342712 C73.4424086,14.7342712 76.5764153,17.868278 76.5764153,21.7342712 L76.5764153,21.7342712 C76.5764153,25.6002645 73.4424086,28.7342712 69.5764153,28.7342712 L40.5764153,28.7342712 C36.7104221,28.7342712 33.5764153,25.6002645 33.5764153,21.7342712 L33.5764153,21.7342712 C33.5764153,17.868278 36.7104221,14.7342712 40.5764153,14.7342712 Z" id="Rectangle" filter="url(#filter-2)" transform="translate(55.076415, 21.734271) scale(1, -1) rotate(90.000000) translate(-55.076415, -21.734271) "></path>
+                <path d="M-12.9235847,31.2342712 L28.0764153,31.2342712 C31.9424086,31.2342712 35.0764153,34.368278 35.0764153,38.2342712 L35.0764153,38.2342712 C35.0764153,42.1002645 31.9424086,45.2342712 28.0764153,45.2342712 L-12.9235847,45.2342712 C-16.7895779,45.2342712 -19.9235847,42.1002645 -19.9235847,38.2342712 L-19.9235847,38.2342712 C-19.9235847,34.368278 -16.7895779,31.2342712 -12.9235847,31.2342712 Z" id="Rectangle" filter="url(#filter-3)" transform="translate(7.576415, 38.234271) scale(1, -1) rotate(90.000000) translate(-7.576415, -38.234271) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

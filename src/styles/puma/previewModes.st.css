@@ -1,0 +1,64 @@
+/* = Default project vars. */
+:import {
+  -st-from: "@actionishope/shelley/styles/default/project.st.css";
+  -st-named:
+    --spacing-unit,
+    breakpoint-md,
+    breakpoint-md-max;
+}
+
+/* = Shelley project scope and vars. */
+:import {
+  -st-from: "./project.st.css";
+  -st-default: Puma;
+  -st-named:
+    /* = CSS3 Switcher vars. */
+    --color-ui-inverse,
+    --color-accent-1,
+    --color-accent-2,
+    --color-accent-3,
+    --color-accent-4,
+    --color-background-2;
+}
+
+/* = Root Component */
+:import {
+  -st-from: "../../components/PreviewModes/previewModes.st.css";
+  -st-default: PreviewModes;
+  -st-named: radio;
+
+}
+
+:import {
+  -st-from: "@actionishope/shelley/components/InputSelectionControl/inputSelectionControl.st.css";
+  -st-default: SelectionControl;
+}
+
+@st-scope Puma {
+  PreviewModes {}
+
+  PreviewModes SelectionControl:type(radio)::inputField {
+    border: none;
+  }
+
+  PreviewModes .radio + .radio {
+    margin-left: 40px;
+  }
+
+  PreviewModes SelectionControl:type(radio)::inputField::before {
+    width: 100%;
+    height: 1px;
+    background: none;
+    border-bottom: 1px solid #89ffca;
+    box-shadow: 0 0 2px 1px #09b1f1;
+  }
+
+  PreviewModes SelectionControl:type(radio)::inputField:focus::before {
+    box-shadow: 0 0 8px 2px #09b1f1;
+  }
+
+  PreviewModes SelectionControl:type(radio)::inputField::after {
+    display: none;
+  }
+
+}

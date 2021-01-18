@@ -1,0 +1,16 @@
+/* = Default project vars. */
+:import {
+  -st-from: "@actionishope/shelley/styles/default/project.st.css";
+  -st-named:
+    --spacing-unit;
+}
+
+/* = Shelley project scope and vars. */
+:import {
+  -st-from: "../styles/puma/project.st.css";
+  -st-default: Puma;
+  -st-named:
+    /* = CSS3 Vars. */
+    --color-background-1,
+    --color-ui;
+}

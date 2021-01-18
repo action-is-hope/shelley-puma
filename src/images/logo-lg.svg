@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="480px" height="262px" viewBox="0 0 480 262" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Untitled 9</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo" transform="translate(-8.000000, 0.000000)">
+            <rect id="Rectangle" fill="#52FBA7" opacity="0.711053757" x="8" y="259" width="122" height="3"></rect>
+            <text id="Inches" font-family="Futura-Medium, Futura" font-size="115" font-weight="400" letter-spacing="7.847067" fill="#FFFFFF">
+                <tspan x="0" y="236">INCHES</tspan>
+            </text>
+            <g id="Group-3-Copy" opacity="0.72937593" transform="translate(250.000000, 0.000000)" fill="#52FBA7">
+                <rect id="Rectangle" x="235" y="1" width="3" height="240"></rect>
+                <rect id="Rectangle" x="180" y="0" width="3" height="70"></rect>
+                <rect id="Rectangle" x="60" y="1" width="3" height="70"></rect>
+                <rect id="Rectangle" x="120" y="1" width="3" height="109"></rect>
+                <rect id="Rectangle" x="0" y="0" width="3" height="130"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

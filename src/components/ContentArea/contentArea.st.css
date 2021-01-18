@@ -1,0 +1,13 @@
+/* contentArea.st.css CSS API */
+@st-global-custom-property --vh;
+
+.root {}
+
+.scroll {
+  height: calc(100vh - 64px);
+
+  height: calc(var(--vh, 1vh) * 100 - 64px);
+  /* height: 500px; */
+  overflow-x: hidden;
+  overflow-y: scroll;
+}

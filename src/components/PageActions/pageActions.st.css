@@ -1,0 +1,47 @@
+/* actions.st.css CSS API */
+
+
+.root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 24px;
+  grid-row-gap: 4px;
+  padding: 14px 24px 24px 8px;
+}
+
+.led {
+  margin: -2px 8px 0 0;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.archived {
+  background-color: #f05751;
+  border: 1px solid #d9453f;
+}
+
+.draft {
+  background-color: #fba012;
+  border: 1px solid #db8500;
+}
+
+.unpublished {
+  background-color: #fba012;
+  border: 1px solid #db8500;
+}
+
+.published {
+  background-color: #14d997;
+  border: 1px solid #0eb87f;
+}
+
+.updated {
+  /* background: #1581ff; */
+  /* border: 1px solid #115cb3; */
+  background-color: #15c8e8;
+  border: 1px solid #75eaff;
+
+}

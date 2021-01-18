@@ -1,0 +1,57 @@
+/* = Default project vars. */
+:import {
+  -st-from: "@actionishope/shelley/styles/default/project.st.css";
+  -st-named:
+    --spacing-unit,
+}
+
+/* = Shelley project scope and vars. */
+:import {
+  -st-from: "./project.st.css";
+  -st-default: Puma;
+  -st-named:
+    /* = CSS3 Switcher vars. */
+    --color-ui-inverse,
+    --color-accent-1,
+    --color-accent-2,
+    --color-accent-3,
+    --color-accent-4,
+    --color-border-2;
+}
+
+/* = Root Component */
+:import {
+  -st-from: "../../components/Preview/preview.st.css";
+  -st-default: Preview;
+}
+
+/* = This is how we can scope the styles in Stylable. */
+@st-scope Puma {
+
+  Preview::previewModes {
+    max-height: 64px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px dashed var(--color-border-2);
+    z-index: 1;
+    padding-top: 18px;
+    transition: border 80ms ease-in-out, margin 80ms ease-in-out;
+  }
+
+  Preview .appWrap {}
+
+  Preview:previewMode(1) iframe,
+  Preview:previewMode(1) .appWrap {
+    position: relative;
+  }
+
+  Preview:previewMode(2) iframe,
+  Preview:previewMode(2) .appWrap {}
+
+  Preview:previewMode(3) iframe,
+  Preview:previewMode(3) .appWrap {}
+
+  Preview:previewMode(4) iframe,
+  Preview:previewMode(4) .appWrap {}
+
+}

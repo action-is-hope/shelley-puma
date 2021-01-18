@@ -1,0 +1,151 @@
+/* = Default project vars. */
+:import {
+  -st-from: "@actionishope/shelley/styles/default/project.st.css";
+  -st-named:
+    --spacing-unit,
+    breakpoint-md,
+    breakpoint-md-max;
+}
+
+/* = Shelley project scope and vars. */
+:import {
+  -st-from: "./project.st.css";
+  -st-default: Puma;
+  -st-named:
+    /* = CSS3 Switcher vars. */
+    --color-ui-inverse,
+    --color-accent-1,
+    --color-accent-2,
+    --color-accent-3,
+    --color-accent-4,
+    --color-background-2;
+}
+
+/* = Root Component */
+:import {
+  -st-from: "../../components/Card/card.st.css";
+  -st-default: Card;
+  -st-named: link, title;
+}
+
+:import {
+  -st-from: "@actionishope/shelley/components/Text/text.st.css";
+  -st-default: Text;
+}
+
+:import {
+  -st-from: '@actionishope/shelley/styles/default/mixins/focus.st.css';
+  -st-named:
+    pseudoFocus,
+    pseudoFocusVisible;
+}
+
+/* Button::after {
+    -st-mixin: pseudoFocus;
+    border-radius: 4px;
+  }
+
+  Button:focus::after {
+    -st-mixin: pseudoFocusVisible;
+  }
+   */
+
+@st-scope Puma {
+  Card {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--color-background-2);
+    transition: all ease-in 75ms;
+  }
+
+  Card::after {
+    -st-mixin: pseudoFocus;
+  }
+
+  Card:focus-within::after {
+    -st-mixin: pseudoFocusVisible;
+  }
+
+
+  Card:hover::after {
+    -st-mixin: pseudoFocusVisible;
+    display: none;
+  }
+
+
+  Card::media {}
+
+  Card::media img {
+    width: 100%;
+    margin-top: -30px
+  }
+
+  Card::text {
+    padding: calc(var(--spacing-unit) * 1.3) calc(var(--spacing-unit));
+    /* padding: 1.5rem; */
+
+    /* padding: 2vw; */
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  Card::text>*+* {
+    margin-top: 0.75rem;
+  }
+
+}
+
+@supports (-webkit-line-clamp: 2) {
+  @st-scope Puma {
+    Card::text :global(p) {
+      width: 100%;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+  }
+}
+
+@media value(breakpoint-md-max) {
+  @st-scope Puma {
+    Card Text.title {
+      font-size: 1em;
+    }
+  }
+}
+
+@st-scope Puma {
+  Card::text> :last-child {
+    margin-top: auto;
+    padding-top: 0.75rem;
+  }
+
+  Card Text:uppercase.title {
+    color: var(--color-accent-2);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+  }
+
+  Card Text>.link {
+    text-decoration: none;
+    border: none;
+    color: inherit;
+    position: static;
+  }
+
+  Card Text>.link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2
+  }
+}

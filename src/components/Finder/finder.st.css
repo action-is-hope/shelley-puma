@@ -1,0 +1,97 @@
+/* = Default project vars. */
+:import {
+  -st-from: "@actionishope/shelley/styles/default/project.st.css";
+  -st-named:
+    --spacing-unit;
+}
+
+/* = Shelley project scope and vars. */
+:import {
+  -st-from: "../../styles/puma/project.st.css";
+  -st-default: Puma;
+  -st-named:
+    /* = CSS3 Switcher vars. */
+    --color-accent-1,
+    --color-background-2;
+}
+
+:import {
+  -st-from: "@actionishope/shelley/components/InputSelectionControl/inputSelectionControl.st.css";
+  -st-default: SelectionControl;
+}
+
+:import {
+  -st-from: "@actionishope/shelley/components/Grid/grid.st.css";
+  -st-default: Grid;
+}
+
+:import {
+  -st-from: "@actionishope/shelley/components/InputBase/inputBase.st.css";
+  -st-default: InputBase;
+}
+
+:import {
+  -st-from: "@actionishope/shelley/components/Label/label.st.css";
+  -st-default: Label;
+}
+
+@st-scope Puma {
+  .root {
+    /* background: pink;
+    grid-template-areas: 'editor preview''. preview'; */
+    display: grid;
+    grid-template-rows: 64px auto;
+    height: 100vh;
+
+    /* --transition-opacity: */
+    /* #6656c1 */
+
+  }
+
+  .root InputBase::fieldInput {
+    -webkit-font-smoothing: antialiased;
+  }
+
+
+  .header {
+    background: #0b0d12;
+    height: 64px;
+    /* position: fixed; */
+    width: 100vw;
+    z-index: 100;
+    /* top: -60px; */
+    /* transition: filter .15s ease-in-out; */
+    /* border-bottom: 1px solid #2f2f2f; */
+  }
+
+  .header,
+  /* .contentBlock.metaBlock, */
+  .actions,
+  .previewVisibility {
+    transition: filter 80ms ease-in-out, opacity 80ms ease-in-out;
+    filter: blur(0px)
+  }
+
+
+  .header:hover {
+    top: 0px;
+  }
+
+
+  .pageLink {
+    display: inline-block;
+  }
+
+  .pageLink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .row {
+    position: relative;
+  }
+}

@@ -1,0 +1,40 @@
+/* = Default project vars. */
+:import {
+  -st-from: "@actionishope/shelley/styles/default/project.st.css";
+  -st-named:
+    --spacing-unit;
+}
+
+/* = Shelley project scope and vars. */
+:import {
+  -st-from: "../../styles/puma/project.st.css";
+  -st-default: Puma;
+  -st-named:
+    /* = CSS3 Switcher vars. */
+    --color-accent-1,
+    --color-background-1,
+    --color-background-2,
+    --color-border-1,
+    --color-modal-border-1;
+}
+
+/* = Root Component */
+:import {
+  -st-from: "../../components/PreviewActions/previewActions.st.css";
+  -st-default: PreviewActions;
+}
+
+:import {
+  -st-from: "@actionishope/shelley/components/Button/button.st.css";
+  -st-default: Button;
+}
+
+
+@st-scope Puma {
+
+  PreviewActions {}
+
+  PreviewActions::toggleFocusButton {}
+
+  PreviewActions::toggleFullScreenButton {}
+}

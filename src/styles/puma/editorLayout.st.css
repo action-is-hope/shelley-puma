@@ -1,0 +1,256 @@
+/* = Default project vars. */
+:import {
+  -st-from: "@actionishope/shelley/styles/default/project.st.css";
+  -st-named:
+    --spacing-unit,
+    breakpoint-lg,
+    breakpoint-sm-max,
+    breakpoint-md,
+    breakpoint-md-max;
+}
+
+/* = Shelley project scope and vars. */
+:import {
+  -st-from: "./project.st.css";
+  -st-default: Puma;
+  -st-named:
+    /* = CSS3 Switcher vars. */
+    --height-header-sm,
+    --height-header-md,
+    --color-ui-inverse,
+    --color-accent-1,
+    --color-accent-2,
+    --color-accent-3,
+    --color-accent-4,
+    --color-border-1,
+    --color-background-1,
+    --color-background-2,
+    --color-background-3,
+    --color-modal-border-1,
+    --color-focus-mode-background;
+}
+
+/* = Root Component */
+:import {
+  -st-from: "../../components/EditorLayout/editorLayout.st.css";
+  -st-default: Layout;
+
+}
+
+:import {
+  -st-from: "@actionishope/shelley/components/Text/text.st.css";
+  -st-default: Text;
+}
+
+:import {
+  -st-from: "@actionishope/shelley/components/Button/button.st.css";
+  -st-default: Button;
+}
+
+:import {
+  -st-from: "../../components/PreviewActions/previewActions.st.css";
+  -st-default: PreviewActions;
+}
+
+
+:import {
+  -st-from: '@actionishope/shelley/styles/default/mixins/focus.st.css';
+  -st-named:
+    pseudoFocus,
+    pseudoFocusVisible;
+}
+
+
+
+@st-scope Puma {
+  Layout {
+    display: grid;
+    grid-template-columns: 100vw 100vw;
+    grid-template-rows: var(--height-header-sm) 1fr 120px;
+    grid-template-areas:
+      'content preview'
+      'content preview'
+      'content actions';
+    background-color: transparent;
+    transition: background-color 160ms ease-in-out;
+  }
+}
+
+@media value(breakpoint-md) {
+  @st-scope Puma {
+    Layout {
+      grid-template-columns: 55% 45%;
+      grid-template-rows: var(--height-header-md) 1fr 120px;
+    }
+  }
+}
+
+
+@media value(breakpoint-md-max) {
+  @st-scope Puma {
+    Layout {
+      scroll-snap-type: x mandatory;
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+
+    Layout .content,
+    Layout .preview {
+      scroll-snap-align: start;
+    }
+  }
+}
+
+
+@st-scope Puma {
+  Layout .preview {
+    transition: width 160ms, left 160ms, opacity 160ms;
+    position: static;
+    width: 100vw;
+  }
+}
+
+@media value(breakpoint-md) {
+  @st-scope Puma {
+    Layout .preview {
+      width: 45vw;
+      position: absolute;
+      left: 55vw;
+      top: calc(var(--height-header-md) - 1px);
+      bottom: 0;
+    }
+
+    Layout:gridMode(fullScreenMode) .preview {
+      left: 0;
+      z-index: 50;
+      width: 100vw;
+    }
+  }
+}
+
+
+
+
+@st-scope Puma {
+
+  Layout:gridMode(fullScreenMode) PreviewActions::toggleFocusButton {
+    opacity: 0;
+  }
+
+  Layout:gridMode(focusMode) PreviewActions::toggleFullScreenButton {
+    opacity: 0;
+  }
+
+  Layout:gridMode(focusMode) .actions {
+    opacity: 0;
+  }
+
+
+  Layout:gridMode(focusMode) {
+    background-color: var(--color-focus-mode-background);
+  }
+
+  Layout:gridMode(focusMode) .content {
+    transform: translateX(22.5vw);
+  }
+
+  Layout:gridMode(focusMode) .preview {
+    opacity: 0;
+  }
+}
+
+@st-scope Puma {
+
+  /* = Child classes used in conjuntion with the grid main component. */
+  .content {
+    grid-area: content;
+    transition: transform 160ms ease-in-out;
+    background-color: var(--color-background-1);
+    z-index: 50;
+    position: relative;
+  }
+}
+
+@st-scope Puma {
+
+  /* = Houses the fullscreen preview button. */
+  .previewActions {
+    grid-area: preview;
+    justify-self: flex-end;
+    z-index: 100;
+    height: var(--height-header-md);
+    width: 200px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 52px;
+  }
+
+  .previewActions Button {
+    height: var(--height-header-md);
+    border-width: 0 1px;
+    border-radius: 0;
+    margin-right: -1px;
+    border-color: var(--color-border-1);
+    transition: opacity 80ms ease-in-out;
+  }
+}
+
+
+@media value(breakpoint-md-max) {
+  @st-scope Puma {
+
+    .previewActions {
+      display: none;
+    }
+  }
+}
+
+@st-scope Puma {
+  .preview {
+    grid-area: preview;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    display: grid;
+    grid-template-rows: var(--height-header-md) 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    border-color: var(--color-border-1);
+    background-color: var(--color-background-3);
+    border-top-color: #4d98a7;
+    /* #3e3e3e */
+  }
+
+  :global(body.on) .previewVisibility[data-focus-on-hidden] + .previewModes {
+    border-color: var(--color-modal-border-1);
+  }
+
+  :global(body.on) .preview {
+    border-color: var(--color-modal-border-1);
+  }
+
+  .actions {
+    z-index: 10;
+    grid-area: actions;
+    background: var(--color-background-1);
+    border-top: 1px solid var(--color-border-1);
+    transition: border 80ms ease-in-out, opacity 80ms ease-in-out;
+  }
+
+  :global(body.on) .actions {
+    opacity: 1 !important;
+    filter: blur(0px) !important;
+    border-color: var(--color-modal-border-1);
+  }
+
+  .actions div {
+    transition: opacity 160ms ease-in-out;
+  }
+
+  :global(body.on) .actions div {
+    opacity: 0.5 !important;
+    filter: blur(2px) !important;
+  }
+
+}

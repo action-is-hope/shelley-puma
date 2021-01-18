@@ -1,0 +1,57 @@
+/* = Default project vars. */
+:import {
+  -st-from: "@actionishope/shelley/styles/default/project.st.css";
+  -st-named:
+    --spacing-unit,
+    breakpoint-sm;
+}
+
+/* = Shelley project scope and vars. */
+:import {
+  -st-from: "./project.st.css";
+  -st-default: Puma;
+  -st-named:
+    /* = CSS3 Switcher vars. */
+    --grad-1,
+    --color-ui-inverse,
+    --color-accent-1,
+    --color-accent-2,
+    --color-accent-3,
+    --color-accent-4,
+    --color-border-2;
+}
+
+/* = Root Component */
+:import {
+  -st-from: "../../components/ContentActions/contentActions.st.css";
+  -st-default: ContentActions;
+}
+
+:import {
+  -st-from: "@actionishope/shelley/components/Button/button.st.css";
+  -st-default: Button;
+}
+
+/* = This is how we can scope the styles in Stylable. */
+@st-scope Puma {
+
+  ContentActions {
+    position: sticky;
+    bottom: 1px;
+    background: var(--grad-1);
+    z-index: 100;
+    height: 69px;
+    /* border-top: 1px dashed #2d2d31; */
+    /* border-right: 1px dashed #2d2d31; */
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+    padding: 0px 0 28px;
+  }
+
+  ContentActions Button {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+}

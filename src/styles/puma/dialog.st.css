@@ -1,0 +1,227 @@
+/* = Default project vars. */
+:import {
+  -st-from: "@actionishope/shelley/styles/default/project.st.css";
+  -st-named:
+    --spacing-unit,
+}
+
+/* = Shelley project scope and vars. */
+:import {
+  -st-from: "./project.st.css";
+  -st-default: Puma;
+  -st-named:
+    /* = CSS3 Switcher vars. */
+    --color-ui-inverse,
+    --color-accent-1,
+
+    --color-accent-3,
+    --color-accent-4,
+    --color-modal-border-1,
+    --color-background-modal-1;
+}
+
+/* = Root Component */
+:import {
+  -st-from: "../../components/Dialog/dialog.st.css";
+  -st-default: Dialog;
+}
+
+/* = This is how we can scope the styles in Stylable. */
+@st-scope Puma {
+
+  Dialog:variant(1) {
+    position: fixed;
+    /* Invokes some extra resources to handle rendering this over other transformed items, in this case the board. */
+    transform: translateZ(0);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  Dialog:variant(1)::backdrop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 1, 0.88);
+  }
+
+  Dialog:variant(1)::content {
+    position: relative;
+    margin: 5vh 8px 16px 8px;
+    width: calc(100vw - 16px);
+    max-width: 650px;
+    padding-bottom: 1px;
+    /* Kicks in the inclusion of margin-bottom of the last item in the container. */
+    max-height: 85vh;
+    background-color: #fff;
+    align-self: flex-start;
+  }
+
+
+  Dialog:variant(2) {
+    grid-area: stack;
+    /* Invokes some extra resources to handle rendering this over other transformed items, in this case the board. */
+    transform: translateZ(0);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  Dialog:variant(2)::backdrop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background-color: rgb(63 47 150 / 89%); */
+    background-color: var(--color-background-modal-1);
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: var(--color-modal-border-1);
+  }
+
+  Dialog:variant(2)::content {
+    position: relative;
+    margin: 60px 8px 60px 8px;
+    width: calc(100vw - 16px);
+    max-width: 650px;
+    padding-bottom: 1px;
+    /* Kicks in the inclusion of margin-bottom of the last item in the container. */
+    max-height: 85vh;
+    background-color: #000;
+    align-self: flex-start;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--color-modal-border-1);
+    /* min-height: 300px; */
+  }
+
+  /* Background transition. */
+  :global(.enter) Dialog::backdrop {
+    opacity: 0;
+  }
+
+  :global(.enter-active) Dialog::backdrop {
+    opacity: 1;
+    transition: opacity 190ms;
+  }
+
+  :global(.enter-done) Dialog::backdrop {
+    opacity: 1;
+  }
+
+  :global(.exit) Dialog::backdrop {
+    opacity: 1;
+  }
+
+  :global(.exit-active) Dialog::backdrop {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+
+  /* Content transition. */
+
+  :global(.enter) Dialog:transition(1)::content {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  :global(.enter-active) Dialog:transition(1)::content {
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 190ms, opacity 190ms;
+  }
+
+  :global(.enter-done) Dialog:transition(1)::content {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  :global(.exit) Dialog:transition(1)::content {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  :global(.exit-active) Dialog:transition(1)::content {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 190ms, opacity 190ms;
+  }
+
+  :global(.enter) Dialog:transition(2)::content {
+    transform: translateY(calc(100vh / 2 + 100%));
+    opacity: 0;
+  }
+
+  :global(.enter-active) Dialog:transition(2)::content {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 190ms, opacity 190ms;
+  }
+
+  :global(.enter-done) Dialog:transition(2)::content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  :global(.exit) Dialog:transition(2)::content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  :global(.exit-active) Dialog:transition(2)::content {
+    transform: translateY(calc(100vh / 2 + 100%));
+    opacity: 0;
+    transition: transform 190ms, opacity 190ms;
+  }
+
+
+  /* 3 */
+  :global(.enter) Dialog:transition(3)::content {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 190ms, opacity 190ms;
+  }
+
+  :global(.enter-active) Dialog:transition(3)::content {
+    transform: scale(1);
+    opacity: 1;
+    /* transition: transform 190ms, opacity 190ms; */
+  }
+
+  :global(.enter-done) Dialog:transition(3)::content {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  :global(.exit) Dialog:transition(3)::content {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  :global(.exit-active) Dialog:transition(3)::content {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 190ms, opacity 190ms;
+  }
+
+  /* Focus on styles that get us our blur styles... */
+  :global(body.on) [data-focus-on-hidden] {
+    opacity: .5 !important;
+    filter: blur(2px) !important;
+  }
+
+}

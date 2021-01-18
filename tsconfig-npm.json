@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    // "outFile": "dist/index.d.ts",
+    // "sourceMap": true,
+    // "inlineSourceMap": true,
+    // "declarationMap": true,
+    // "declarationDir": "dist/types",
+    // "rootDirs": ["src/components", "src/projects"],
+    // "rootDir": "src",
+    "outDir": "dist",
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    // "skipLibCheck": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "lib": ["dom", "es2016"],
+    "pretty": true,
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "src/**/__tests__/*", "src/**/*.examples.tsx"]
+}
