@@ -1,21 +1,21 @@
 import React from "react";
 import classnames from "classnames";
-import { st, classes } from "./layout.st.css";
+import { st, classes } from "./ReferenceComp.st.css";
 
 import { Grid, GridProps, Text } from "@actionishope/shelley";
 import { classes as grid } from "@actionishope/shelley/styles/default/grid.st.css";
 
-interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ReferenceCompProps extends React.HTMLAttributes<HTMLDivElement> {
   gridMode: "default" | "previewFullScreen";
 }
-const Layout = React.forwardRef(
+const ReferenceComp = React.forwardRef(
   (
     {
       className: classNameProp,
       children,
       gridMode = "default",
       ...rest
-    }: LayoutProps,
+    }: ReferenceCompProps,
     ref?: React.Ref<HTMLDivElement>
   ) => {
     return (
@@ -30,6 +30,6 @@ const Layout = React.forwardRef(
   }
 );
 
-Layout.displayName = "Layout";
+ReferenceComp.displayName = "ReferenceComp";
 
-export default Layout;
+export default ReferenceComp;
