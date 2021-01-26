@@ -24,8 +24,9 @@ import EditorLayout from "./editorLayout.st.css";
 import FinderLayout from "./finderLayout.st.css";
 import PageActions from "./pageActions.st.css";
 import Preview from "./preview.st.css";
-import PreviewModes from "./previewModes.st.css";
+import PreviewActions from "./previewActions.st.css";
 import PreviewChrome from "./previewChrome.st.css";
+import PreviewModes from "./previewModes.st.css";
 import BlockEditor from "./blockEditor.st.css";
 import MetaDataEditor from "./metaDataEditor.st.css";
 
@@ -92,6 +93,9 @@ export const pageActions = (...values: []) =>
 
 export const preview = (...values: []) =>
   getStylableClassNames(values, Preview, "preview");
+
+export const previewActions = (...values: []) =>
+  getStylableClassNames(values, PreviewActions, "previewActions");
 
 export const previewModes = (...values: []) =>
   getStylableClassNames(values, PreviewModes, "previewModes");
