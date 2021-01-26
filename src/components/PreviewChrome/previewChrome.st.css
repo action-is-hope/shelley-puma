@@ -1,0 +1,194 @@
+/* previewChrome.st.css CSS API */
+.root {
+  -st-states:
+    previewMode(enum(1, 2, 3, 4, 5, 6)),
+    fullScreenMode;
+}
+
+.chrome {}
+
+.iframe {}
+
+
+.root {
+  height: 100%;
+  display: flex;
+  overflow-y: hidden;
+  align-items: center;
+  flex-direction: column;
+  max-height: 800px;
+}
+
+.iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+.chrome {
+  transform: scale(0);
+  transition: transform 160ms ease-in-out, margin-top 0ms ease-in-out;
+  box-sizing: content-box;
+  background-size: contain;
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
+
+
+/* Mobile */
+.root:previewMode(1) {
+  max-height: 68vh;
+}
+
+.root:previewMode(1) .iframe {
+  width: 375px;
+  height: 812px;
+}
+
+.root:previewMode(1) .chrome {
+  margin-top: 0;
+  background-image: url("https://ik.imagekit.io/tcvka0ufln/iphone-chrome_buDUHZLeS9cg.png");
+  padding: 64px 32px 32px;
+  /* transition: transform 160ms ease-in-out; */
+  transform-origin: center 10%;
+  transform: scale(0.45);
+}
+
+.root:previewMode(1):fullScreenMode {
+  max-height: 88vh;
+}
+
+.root:previewMode(1):fullScreenMode .chrome {
+  margin-top: 9vh;
+  transform: scale(0.75);
+  /* transform-origin: center 10%; */
+}
+
+
+@media screen and (min-height: 915px) {
+  .root:previewMode(1) .chrome {
+    transform: scale(0.55);
+    transform-origin: center 0%;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .root:previewMode(1) .chrome {
+    transform: scale(0.65);
+  }
+}
+
+@media screen and (max-width: 950px),
+screen and (min-height: 1000px) {
+  .root:previewMode(1) .chrome {
+    transform-origin: center 10%;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .root:previewMode(1) .chrome {
+    transform-origin: center 0%;
+  }
+}
+
+
+
+
+
+/* Desktop */
+.root:previewMode(2) .iframe {
+  width: 1452px;
+  height: 921px;
+}
+
+.root:previewMode(2) .chrome {
+  background-image: url("https://ik.imagekit.io/tcvka0ufln/dasktop_MqyUc9KU_.png");
+  padding: 53px 181px 150px 181px;
+  transform-origin: center 20vh;
+  transform: scale(0.3);
+}
+
+.root:previewMode(2):fullScreenMode .chrome {
+  transform: scale(.6);
+}
+
+
+/* Tablet */
+.root:previewMode(3) .iframe {
+  width: 768px;
+  height: 1024px;
+}
+
+.root:previewMode(3) .chrome {
+  background-image: url("https://ik.imagekit.io/tcvka0ufln/ipad-chrome_xobepnrZS.png");
+  transform: scale(0.4);
+  transform-origin: center 10vh;
+  background-size: contain;
+  padding: 123px 65px 129px 65px;
+  background-color: transparent;
+}
+
+.root:previewMode(3):fullScreenMode .chrome {
+  transform: scale(.6);
+}
+
+
+/* Mobile */
+.root:previewMode(4) {
+  max-height: 68vh;
+}
+
+.root:previewMode(4) .iframe {
+  width: 375px;
+  height: 767px;
+  background: #fff;
+  border-radius: 0 0 40px 40px;
+}
+
+.root:previewMode(4) .chrome {
+  margin-top: 0;
+  background-image: url("https://ik.imagekit.io/tcvka0ufln/iphone-chrome_2__oyoL8Ek9jZ0i.png");
+  padding: 66px 32px 40px;
+  /* transition: transform 160ms ease-in-out; */
+  transform-origin: center 10%;
+  transform: scale(0.45);
+}
+
+.root:previewMode(4):fullScreenMode {
+  max-height: 88vh;
+}
+
+.root:previewMode(4):fullScreenMode .chrome {
+  margin-top: 9vh;
+  transform: scale(0.75);
+  /* transform-origin: center 10%; */
+}
+
+
+@media screen and (min-height: 915px) {
+  .root:previewMode(4) .chrome {
+    transform: scale(0.55);
+    transform-origin: center 0%;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .root:previewMode(4) .chrome {
+    transform: scale(0.65);
+  }
+}
+
+@media screen and (max-width: 950px),
+screen and (min-height: 1000px) {
+  .root:previewMode(4) .chrome {
+    transform-origin: center 10%;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .root:previewMode(4) .chrome {
+    transform-origin: center 0%;
+  }
+}
