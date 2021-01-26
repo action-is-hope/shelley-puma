@@ -1,6 +1,5 @@
 import React from "react";
 import classnames from "classnames";
-import Link from "gatsby-link";
 import { H2, H3, P } from "@actionishope/shelley";
 import { st, classes } from "./card.st.css";
 
@@ -42,9 +41,9 @@ const Card = ({
       <div className={classes.text}>
         <H3 className={classes.title} uppercase vol={3}>
           {url && (
-            <Link className={classes.link} to={url}>
+            <a className={classes.link} href={url}>
               {title}
-            </Link>
+            </a>
           )}
           {onClick && (
             <a className={classes.link} onClick={e => onClick(e)} href="#">

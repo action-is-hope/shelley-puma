@@ -26,7 +26,6 @@ const DefaultLayout = ({ children }: any) => {
 
   useEffect(
     // Set the theme based on what is in local storage.
-
     () => setAltTheme(window.localStorage.getItem("currentTheme") === "light"),
     [altThemeEnabled]
   );

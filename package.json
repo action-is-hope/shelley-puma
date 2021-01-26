@@ -1,6 +1,6 @@
 {
   "name": "@actionishope/shelley-puma",
-  "version": "0.1.1-alpha.1",
+  "version": "0.1.1-alpha.4",
   "license": "ISC",
   "description": "Shelley Admin - A CMS/admin component set.",
   "repository": {
@@ -90,5 +90,8 @@
     "ts-jest": "^26.1.3",
     "typescript": "^3.9.7",
     "utf-8-validate": "^5.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

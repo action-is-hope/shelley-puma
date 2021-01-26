@@ -50,6 +50,9 @@ export * from "./components/PageActions/PageActions";
 export { default as Preview } from "./components/Preview/Preview";
 export * from "./components/Preview/Preview";
 
+export { default as PreviewActions } from "./components/PreviewActions/PreviewActions";
+export * from "./components/PreviewActions/PreviewActions";
+
 export { default as PreviewModes } from "./components/PreviewModes/PreviewModes";
 export * from "./components/PreviewModes/PreviewModes";
 
