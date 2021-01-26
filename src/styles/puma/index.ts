@@ -23,8 +23,10 @@ import Card from "./card.st.css";
 import EditorLayout from "./editorLayout.st.css";
 import FinderLayout from "./finderLayout.st.css";
 import PageActions from "./pageActions.st.css";
-import PreviewModes from "./previewModes.st.css";
 import Preview from "./preview.st.css";
+import PreviewActions from "./previewActions.st.css";
+import PreviewChrome from "./previewChrome.st.css";
+import PreviewModes from "./previewModes.st.css";
 import BlockEditor from "./blockEditor.st.css";
 import MetaDataEditor from "./metaDataEditor.st.css";
 
@@ -89,11 +91,17 @@ export const finderLayout = (...values: []) =>
 export const pageActions = (...values: []) =>
   getStylableClassNames(values, PageActions, "pageActions");
 
+export const preview = (...values: []) =>
+  getStylableClassNames(values, Preview, "preview");
+
+export const previewActions = (...values: []) =>
+  getStylableClassNames(values, PreviewActions, "previewActions");
+
 export const previewModes = (...values: []) =>
   getStylableClassNames(values, PreviewModes, "previewModes");
 
-export const preview = (...values: []) =>
-  getStylableClassNames(values, Preview, "preview");
+export const previewChrome = (...values: []) =>
+  getStylableClassNames(values, PreviewChrome, "previewChrome");
 
 export const blockEditor = (...values: []) =>
   getStylableClassNames(values, BlockEditor, "blockEditor");

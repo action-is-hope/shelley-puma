@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 import classnames from "classnames";
 import { FocusOn } from "react-focus-on";
-import { st, classes } from "./dialog.st.css";
+import { st, classes } from "./dialogContent.st.css";
 
 import { TransitionProps } from "react-transition-group/Transition";
 import { ReactFocusOnProps } from "react-focus-on/dist/es5/types";

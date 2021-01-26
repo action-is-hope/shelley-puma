@@ -220,8 +220,8 @@
 
   /* Focus on styles that get us our blur styles... */
   :global(body.on) [data-focus-on-hidden] {
-    opacity: .5 !important;
-    filter: blur(2px) !important;
+    opacity: .5;
+    filter: blur(2px);
   }
 
 }

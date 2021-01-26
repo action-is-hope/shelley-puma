@@ -41,16 +41,5 @@
   .appWrap {
     background: #fff;
     color: #333;
-    min-width: 310px;
-    max-width: 375px;
-    transform: scale(0.8);
-    max-height: 75vh;
-    transform-origin: center 0;
-
-    background: url("https://ik.imagekit.io/tcvka0ufln/iphone_u7ZlkmbSi.png");
-    background: url("https://ik.imagekit.io/tcvka0ufln/iphone-chrome-0.4_B9bCmf0UtEnNQ.png");
-
-    padding: 50px;
-    background-size: cover;
   }
 }

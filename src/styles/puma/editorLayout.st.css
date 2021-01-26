@@ -238,19 +238,19 @@
     transition: border 80ms ease-in-out, opacity 80ms ease-in-out;
   }
 
-  :global(body.on) .actions {
-    opacity: 1 !important;
-    filter: blur(0px) !important;
+  :global(body.on) .actions[data-focus-on-hidden] {
+    opacity: 1;
+    filter: blur(0px);
     border-color: var(--color-modal-border-1);
   }
 
   .actions div {
-    transition: opacity 160ms ease-in-out;
+    transition: opacity 80ms ease-in-out, filter 80ms ease-in-out;
   }
 
-  :global(body.on) .actions div {
-    opacity: 0.5 !important;
-    filter: blur(2px) !important;
+  :global(body.on) .actions[data-focus-on-hidden] div {
+    opacity: 0.5;
+    filter: blur(2px);
   }
 
 }

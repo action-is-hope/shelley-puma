@@ -1,0 +1,138 @@
+/* = Default project vars. */
+:import {
+  -st-from: "@actionishope/shelley/styles/default/project.st.css";
+  -st-named:
+    --spacing-unit;
+}
+
+/* = Shelley project scope and vars. */
+:import {
+  -st-from: "../../styles/puma/project.st.css";
+  -st-default: Puma;
+  -st-named:
+    /* = CSS3 Switcher vars. */
+    --color-accent-1,
+    --color-background-1,
+    --color-background-2,
+    --color-border-1,
+    --color-modal-border-1;
+}
+
+/* = Root Component */
+:import {
+  -st-from: "../../components/PreviewChrome/previewChrome.st.css";
+  -st-default: PreviewChrome;
+  -st-named: iframe, chrome;
+}
+
+
+@st-scope Puma {
+
+  PreviewChrome {}
+
+  /* Social/Meta preview - Provided by PreviewMeta. */
+  PreviewChrome:previewMode(1) {}
+
+
+  /* Desktop */
+  PreviewChrome:previewMode(2) .chrome {
+    background-image: url("https://ik.imagekit.io/tcvka0ufln/dasktop_MqyUc9KU_.png");
+    padding: 53px 181px 150px 181px;
+    transform-origin: center 20vh;
+    transform: scale(0.3);
+  }
+
+  PreviewChrome:previewMode(2) .iframe {
+    width: 1452px;
+    height: 921px;
+  }
+
+  PreviewChrome:previewMode(2):fullScreenMode .chrome {
+    transform: scale(.6);
+  }
+
+
+  /* Tablet */
+  PreviewChrome:previewMode(3) .chrome {
+    padding: 123px 65px 129px 65px;
+    background-image: url("https://ik.imagekit.io/tcvka0ufln/ipad-chrome_xobepnrZS.png");
+    transform: scale(0.4);
+    transform-origin: center 10vh;
+  }
+
+  PreviewChrome:previewMode(3) .iframe {
+    width: 768px;
+    height: 1024px;
+  }
+
+  PreviewChrome:previewMode(3):fullScreenMode .chrome {
+    transform: scale(.6);
+  }
+
+
+  /* Mobile */
+  PreviewChrome:previewMode(4) {
+    max-height: 68vh;
+  }
+
+  PreviewChrome:previewMode(4) .chrome {
+    margin-top: 0;
+    background-image: url("https://ik.imagekit.io/tcvka0ufln/iphone-chrome_2__oyoL8Ek9jZ0i.png");
+    padding: 66px 32px 40px;
+    transform-origin: center 10%;
+    transform: scale(0.45);
+  }
+
+  PreviewChrome:previewMode(4) .iframe {
+    width: 375px;
+    height: 784px;
+    background: #fff;
+    border-radius: 0 0 40px 40px;
+  }
+
+
+  PreviewChrome:previewMode(4):fullScreenMode {
+    max-height: 88vh;
+  }
+
+  PreviewChrome:previewMode(4):fullScreenMode .chrome {
+    margin-top: 9vh;
+    transform: scale(0.75);
+    /* transform-origin: center 10%; */
+  }
+}
+
+
+@media screen and (min-height: 915px) {
+  @st-scope Puma {
+    PreviewChrome:previewMode(4) .chrome {
+      transform: scale(0.55);
+      transform-origin: center 0%;
+    }
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  @st-scope Puma {
+    PreviewChrome:previewMode(4) .chrome {
+      transform: scale(0.65);
+    }
+  }
+}
+
+@media screen and (max-width: 950px),
+screen and (min-height: 1000px) {
+  @st-scope Puma {
+    PreviewChrome:previewMode(4) .chrome {
+      transform-origin: center 10%;
+    }
+  }
+}
+
+@media screen and (min-width: 950px) {
+  @st-scope Puma {
+    PreviewChrome:previewMode(4) .chrome {
+      transform-origin: center 0%;
+    }
+  }
+}
