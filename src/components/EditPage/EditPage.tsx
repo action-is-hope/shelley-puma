@@ -16,6 +16,8 @@ import PageActions, { statusOptions } from "../PageActions/PageActions";
 import ContentArea from "../ContentArea/ContentArea";
 import ContentActions from "../ContentActions/ContentActions";
 import PreviewActions from "../PreviewActions/PreviewActions";
+import PreviewChrome from "../PreviewChrome/PreviewChrome";
+import { classes as previewChrome } from "../PreviewChrome/previewChrome.st.css";
 
 const EditPreview = () => {
   /** Refs */
@@ -265,21 +267,33 @@ const EditPreview = () => {
           shards: [previewModes, fullScreenModeButton]
         }}
       >
-        <div className={classnames(classes.appWrap, "iframe")}>
-          <H2 vol={6}>Block1</H2>
-          <P>Block2</P>
-          <P>Block3</P>
-          <P>Block3</P>
-          <P>Block3</P>
-          <H2 vol={6}>Block1</H2>
-          <P>Block3</P>
-          <P>Block3</P>
-          <P>Block3</P>
-          <H2 vol={6}>Block1</H2>
-          <P>Block3</P>
-          <P>Block3</P>
-          <P>Block3</P>
-        </div>
+        {/* {previewMode === 1 && (
+              <PreviewMetaData
+                title={`${page.title} | British Council`}
+                description={page.description}
+                image={page.image && page.image.url}
+                slug={`https://www.britishcouncil.site${page.slug}`}
+              />
+            )} */}
+        {previewMode !== 1 && (
+          <PreviewChrome {...{ previewMode, fullScreenMode }}>
+            <div className={classnames(previewChrome.iframe, classes.appWrap)}>
+              <H2 vol={6}>Block1</H2>
+              <P>Block2</P>
+              <P>Block3</P>
+              <P>Block3</P>
+              <P>Block3</P>
+              <H2 vol={6}>Block1</H2>
+              <P>Block3</P>
+              <P>Block3</P>
+              <P>Block3</P>
+              <H2 vol={6}>Block1</H2>
+              <P>Block3</P>
+              <P>Block3</P>
+              <P>Block3</P>
+            </div>
+          </PreviewChrome>
+        )}
       </Preview>
 
       <PageActions
