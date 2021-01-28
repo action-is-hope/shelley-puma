@@ -11,12 +11,14 @@ import { classes as layout } from "../../styles/puma/editorLayout.st.css";
 import { Button, InputText, P, H2, Label } from "@actionishope/shelley";
 import BlockEditor from "../BlockEditor/BlockEditor";
 import MetaDataEditor from "../MetaDataEditor/MetaDataEditor";
-import Preview from "../Preview/Preview";
 import PageActions, { statusOptions } from "../PageActions/PageActions";
 import ContentArea from "../ContentArea/ContentArea";
 import ContentActions from "../ContentActions/ContentActions";
+import Preview from "../Preview/Preview";
 import PreviewActions from "../PreviewActions/PreviewActions";
 import PreviewChrome from "../PreviewChrome/PreviewChrome";
+import PreviewMetaData from "../PreviewMetaData/PreviewMetaData";
+
 import { classes as previewChrome } from "../PreviewChrome/previewChrome.st.css";
 
 const EditPreview = () => {
@@ -267,14 +269,15 @@ const EditPreview = () => {
           shards: [previewModes, fullScreenModeButton]
         }}
       >
-        {/* {previewMode === 1 && (
-              <PreviewMetaData
-                title={`${page.title} | British Council`}
-                description={page.description}
-                image={page.image && page.image.url}
-                slug={`https://www.britishcouncil.site${page.slug}`}
-              />
-            )} */}
+        {previewMode === 1 && (
+          <PreviewMetaData
+            title="Shelley Puma UI"
+            description="The CMS that you want to use."
+            image="https://ik.imagekit.io/tcvka0ufln/pontoon_v3jIy64zcnwwx.jpeg?tr=w-1200,h-630,fo-auto"
+            slug="https://www.shelley.earth"
+            domain="shelley.earth"
+          />
+        )}
         {previewMode !== 1 && (
           <PreviewChrome {...{ previewMode, fullScreenMode }}>
             <div className={classnames(previewChrome.iframe, classes.appWrap)}>
