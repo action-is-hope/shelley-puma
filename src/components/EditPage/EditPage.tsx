@@ -278,8 +278,9 @@ const EditPreview = () => {
             title="Shelley Puma UI"
             description="The CMS that you want to use."
             image="https://ik.imagekit.io/tcvka0ufln/pontoon_v3jIy64zcnwwx.jpeg?tr=w-1200,h-630,fo-auto"
-            slug="https://www.shelley.earth"
+            slug="shelley.earth"
             domain="shelley.earth"
+            fullScreenMode
           />
         )}
         {previewMode !== 1 && (

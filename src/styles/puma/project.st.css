@@ -129,10 +129,11 @@
   --height-header-md: 65px;
 
   /* = Meta Data Social Preview */
-  --google-background: rgb(255 255 255 / 87%);
-  --google-title: #1a0dab;
-  --google-desc: #4d5156;
-  --google-url: #202124;
+  --google-background: #151f2b;
+  /* #303136; */
+  --google-title: #5b9be8;
+  --google-desc: #bbbdc0;
+  --google-url: #bbbdc0;
   --google-font: arial, sans-serif;
 
   --twitter-background: #151f2b;

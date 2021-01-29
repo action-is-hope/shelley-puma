@@ -34,6 +34,10 @@
 
   PreviewActions {}
 
+  PreviewActions Button:vol(5) {
+    font-size: 1.15em;
+  }
+
   PreviewActions::toggleFocusButton {}
 
   PreviewActions::toggleFullScreenButton {}
