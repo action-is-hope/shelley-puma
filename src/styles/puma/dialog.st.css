@@ -17,7 +17,8 @@
     --color-accent-3,
     --color-accent-4,
     --color-modal-border-1,
-    --color-background-modal-1;
+    --color-background-modal-1,
+    --color-background-modal-content-1;
 }
 
 /* = Root Component */
@@ -60,7 +61,7 @@
     padding-bottom: 1px;
     /* Kicks in the inclusion of margin-bottom of the last item in the container. */
     max-height: 85vh;
-    background-color: #fff;
+    background-color: var(--color-background-modal-content-1);
     align-self: flex-start;
   }
 
@@ -100,7 +101,7 @@
     padding-bottom: 1px;
     /* Kicks in the inclusion of margin-bottom of the last item in the container. */
     max-height: 85vh;
-    background-color: #000;
+    background-color: var(--color-background-modal-content-1);
     align-self: flex-start;
 
     border-style: solid;

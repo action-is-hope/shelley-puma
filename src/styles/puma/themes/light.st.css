@@ -50,6 +50,7 @@
     /* = Modal colors */
     --color-background-modal-1,
     --color-modal-border-1,
+    --color-background-modal-content-1,
     /* = Focus mode colors */
     --color-focus-mode-background,
     /* = Header colors */
@@ -128,8 +129,9 @@
   /* --color-border-2: green; */
 
   /* = Modal colors */
-  --color-background-modal-1: #51a0af75;
-  --color-modal-border-1: #51a0af;
+  --color-background-modal-1: rgb(0 0 0 / 40%);
+  --color-modal-border-1: #000;
+  --color-background-modal-content-1: var(--color-background-1);
 
   /* = Focus mode colors*/
   --color-focus-mode-background: #d2d2d2;

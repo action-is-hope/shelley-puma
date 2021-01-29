@@ -153,7 +153,7 @@ const EditPreview = () => {
           />
         </BlockEditor>
 
-        <BlockEditor
+        {/* <BlockEditor
           settingsRender={() => (
             <P>Select taxonomies to display in this listing.</P>
           )}
@@ -241,7 +241,7 @@ const EditPreview = () => {
             type="text"
             vol={6}
           />
-        </BlockEditor>
+        </BlockEditor> */}
 
         <ContentActions>
           <Button vol={4} variant={3} tone={3}>
@@ -249,17 +249,6 @@ const EditPreview = () => {
           </Button>
         </ContentActions>
       </ContentArea>
-
-      <PreviewActions
-        className={layout.previewActions}
-        ref={previewActions}
-        focusMode={focusMode}
-        refFocusButton={focusModeButton}
-        onFocusClick={setFocusMode}
-        fullScreenMode={fullScreenMode}
-        refFullScreenButton={fullScreenModeButton}
-        onFullScreenClick={setFullScreenMode}
-      />
 
       <Preview
         className={layout.preview}
@@ -276,7 +265,7 @@ const EditPreview = () => {
         {previewMode === 1 && (
           <PreviewMetaData
             title="Shelley Puma UI"
-            description="The CMS that you want to use."
+            description="A joyfully easy to use CMS UI built upon a little known library called Shelley."
             image="https://ik.imagekit.io/tcvka0ufln/pontoon_v3jIy64zcnwwx.jpeg?tr=w-1200,h-630,fo-auto"
             slug="shelley.earth"
             domain="shelley.earth"
@@ -303,6 +292,17 @@ const EditPreview = () => {
           </PreviewChrome>
         )}
       </Preview>
+
+      <PreviewActions
+        className={layout.previewActions}
+        ref={previewActions}
+        focusMode={focusMode}
+        refFocusButton={focusModeButton}
+        onFocusClick={setFocusMode}
+        fullScreenMode={fullScreenMode}
+        refFullScreenButton={fullScreenModeButton}
+        onFullScreenClick={setFullScreenMode}
+      />
 
       <PageActions
         className={layout.actions}
