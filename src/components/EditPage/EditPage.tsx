@@ -48,9 +48,13 @@ const EditPreview = () => {
         className={layout.content}
         onScrolled={(status: boolean) => setSliderScrolled(status)}
         focusOnProps={{
+          // enabled: false,
           enabled: focusMode,
           onEscapeKey: () => setFocusMode(false),
           shards: [focusModeButton]
+          // shouldIgnore: (node: any) =>
+          //   document.getElementById("__gatsby")?.contains(node)
+          // document.getElementsByTagName("reach-portal")?.contains(node)
         }}
       >
         <MetaDataEditor
