@@ -26,6 +26,7 @@ import PageActions from "./pageActions.st.css";
 import Preview from "./preview.st.css";
 import PreviewActions from "./previewActions.st.css";
 import PreviewChrome from "./previewChrome.st.css";
+import PreviewMetaData from "./previewMetaData.st.css";
 import PreviewModes from "./previewModes.st.css";
 import BlockEditor from "./blockEditor.st.css";
 import MetaDataEditor from "./metaDataEditor.st.css";
@@ -96,6 +97,9 @@ export const preview = (...values: []) =>
 
 export const previewActions = (...values: []) =>
   getStylableClassNames(values, PreviewActions, "previewActions");
+
+export const previewMetaData = (...values: []) =>
+  getStylableClassNames(values, PreviewMetaData, "previewMetaData");
 
 export const previewModes = (...values: []) =>
   getStylableClassNames(values, PreviewModes, "previewModes");

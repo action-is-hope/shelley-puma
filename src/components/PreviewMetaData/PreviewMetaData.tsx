@@ -89,7 +89,7 @@ export const Twitter = ({
     <Icon
       viewBox="0 0 400 400"
       className={classes.twitterLogo}
-      aria-label="A preview of how this page will look when shared on twitter."
+      aria-label="A preview of how this page will look when shared on Twitter."
       aria-hidden={false}
     >
       <path
@@ -200,27 +200,29 @@ const PreviewMetaData = React.forwardRef(
       children,
       title,
       description,
+      fullScreenMode = false,
       image,
       slug,
+      domain,
       ...rest
     }: PreviewMetaDataProps,
     ref?: React.Ref<HTMLDivElement>
-  ) => {
-    return (
-      <div
-        className={st(classnames(classes.root, classNameProp))}
-        ref={ref}
-        {...rest}
-      >
-        <div className={classes.chrome}>
-          <Google {...{ title, description, slug }} />
-          <Twitter {...{ title, description, image }} />
-          <Facebook {...{ title, description, image }} />
-          {children}
-        </div>
+  ) => (
+    <div
+      className={st(classnames(classes.root, classNameProp), {
+        fullScreenMode
+      })}
+      ref={ref}
+      {...rest}
+    >
+      <div className={classes.chrome}>
+        <Google {...{ title, description, slug }} />
+        <Twitter {...{ title, description, image, domain }} />
+        <Facebook {...{ title, description, image, domain }} />
+        {children}
       </div>
-    );
-  }
+    </div>
+  )
 );
 
 PreviewMetaData.displayName = "PreviewMetaData";

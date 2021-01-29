@@ -69,7 +69,24 @@
     --color-form-selection-track,
     --color-form-selection-mark, */
     /* = Gradiants */
-    --grad-1;
+    --grad-1,
+    /* = Meta Data / Social */
+    --google-background,
+    --google-title,
+    --google-desc,
+    --google-url,
+    --twitter-background,
+    --twitter-listing-background,
+    --twitter-border,
+    --twitter-title,
+    --twitter-desc,
+    --twitter-domain,
+    --facebook-background,
+    --facebook-listing-background,
+    --facebook-border,
+    --facebook-title,
+    --facebook-desc,
+    --facebook-domain;
 }
 
 :import {
@@ -143,9 +160,30 @@
   /* = Gradiants */
   --grad-1: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 200px, rgba(255, 255, 255, 0.5) 500px, rgba(255, 255, 255, 0.8) 100%);
 
+  /* = Meta Data Social Preview */
+  --google-background: #fff;
+  --google-title: #1a0dab;
+  --google-desc: #4d5156;
+  --google-url: #202124;
+
+  --twitter-background: #fff;
+  --twitter-listing-background: #fff;
+  --twitter-border: #c4cfd6;
+  --twitter-title: #1d2129;
+  --twitter-desc: #5b7083;
+  --twitter-domain: #5b7083;
+
+  --facebook-background: #fff;
+  --facebook-listing-background: #f0f2f5;
+  --facebook-border: #dddfe2;
+  --facebook-title: #1d2129;
+  --facebook-desc: #606770;
+  --facebook-domain: #606770;
+
   /* = Misc */
   /* --select-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='333333' xml:space='preserve'><path d='M13 4v2l-5 5-5-5v-2l5 5z'></path></svg>"); */
   --select-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='333333' xml:space='preserve'><path d='M3 2v2l5 5 5-5v-2l-5 5z'></path><path d='M3 7v2l5 5 5-5v-2l-5 5z'></path></svg>");
+
 }
 
 .root BlockEditor::mainContent {

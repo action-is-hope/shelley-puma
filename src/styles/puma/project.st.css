@@ -128,8 +128,34 @@
   --height-header-sm: 56px;
   --height-header-md: 65px;
 
+  /* = Meta Data Social Preview */
+  --google-background: rgb(255 255 255 / 87%);
+  --google-title: #1a0dab;
+  --google-desc: #4d5156;
+  --google-url: #202124;
+  --google-font: arial, sans-serif;
 
+  --twitter-background: #151f2b;
+  --twitter-listing-background: #151f2b;
+  --twitter-border: #313d46;
   /* meta-border: #0b0d12 */
+  --twitter-title: #fff;
+  --twitter-desc: #8899a6;
+  --twitter-domain: #8899a6;
+  --twitter-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+
+  --facebook-background: #151f2b;
+  --facebook-listing-background: rgb(58 59 60 / 75%);
+  --facebook-border: transparent;
+  --facebook-title: #fff;
+  --facebook-desc: #b0b3b8;
+  --facebook-domain: #b0b3b8;
+  --facebook-font: Helvetica, Arial, sans-serif;
+
+
+
+
+
 }
 
 /*=== Root Level CSS ===*/
