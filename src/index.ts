@@ -59,6 +59,9 @@ export * from "./components/PreviewChrome/PreviewChrome";
 export { default as PreviewModes } from "./components/PreviewModes/PreviewModes";
 export * from "./components/PreviewModes/PreviewModes";
 
+export { default as PreviewMetaData } from "./components/PreviewMetaData/PreviewMetaData";
+export * from "./components/PreviewMetaData/PreviewMetaData";
+
 // Icons - TEMP - Move to package...
 
 export { default as AddIconn } from "./components/icons/Add";

@@ -59,9 +59,11 @@
     position: sticky;
     top: 80px;
     z-index: 10;
-    margin: 16px 12px;
-    width: 50px;
+    margin: 16px 30px;
     height: 100px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
   }
 
   /* Main content - the main editing items. */

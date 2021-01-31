@@ -14,13 +14,24 @@
     /* = Build time colours - whatever we need for this file. */
     --color-ui,
     --color-background-1,
-    --color-accent-2,
+    --color-accent-1,
 }
 
 :import {
   -st-from: "@actionishope/shelley/components/Text/text.st.css";
   -st-default: Text;
 }
+
+/* = Root Component */
+:import {
+  -st-from: "@actionishope/shelley/components/Button/button.st.css";
+  -st-default: Button;
+  -st-named:
+    --bg-color,
+    --border-color,
+    --text-color;
+}
+
 
 
 /* 
@@ -49,3 +60,9 @@
  *
  *  h2Text:uppercase {...}
  */
+
+
+.root Button:variant(3):tone(3) {
+  --bg-color: #000;
+  --text-color: var(--color-accent-1);
+}

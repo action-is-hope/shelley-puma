@@ -40,6 +40,7 @@
     padding: 53px 181px 150px 181px;
     transform-origin: center 20vh;
     transform: scale(0.3);
+    opacity: .95;
   }
 
   PreviewChrome:previewMode(2) .iframe {

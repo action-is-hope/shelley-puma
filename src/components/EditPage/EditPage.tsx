@@ -11,12 +11,14 @@ import { classes as layout } from "../../styles/puma/editorLayout.st.css";
 import { Button, InputText, P, H2, Label } from "@actionishope/shelley";
 import BlockEditor from "../BlockEditor/BlockEditor";
 import MetaDataEditor from "../MetaDataEditor/MetaDataEditor";
-import Preview from "../Preview/Preview";
 import PageActions, { statusOptions } from "../PageActions/PageActions";
 import ContentArea from "../ContentArea/ContentArea";
 import ContentActions from "../ContentActions/ContentActions";
+import Preview from "../Preview/Preview";
 import PreviewActions from "../PreviewActions/PreviewActions";
 import PreviewChrome from "../PreviewChrome/PreviewChrome";
+import PreviewMetaData from "../PreviewMetaData/PreviewMetaData";
+
 import { classes as previewChrome } from "../PreviewChrome/previewChrome.st.css";
 
 const EditPreview = () => {
@@ -46,9 +48,13 @@ const EditPreview = () => {
         className={layout.content}
         onScrolled={(status: boolean) => setSliderScrolled(status)}
         focusOnProps={{
+          // enabled: false,
           enabled: focusMode,
           onEscapeKey: () => setFocusMode(false),
           shards: [focusModeButton]
+          // shouldIgnore: (node: any) =>
+          //   document.getElementById("__gatsby")?.contains(node)
+          // document.getElementsByTagName("reach-portal")?.contains(node)
         }}
       >
         <MetaDataEditor
@@ -147,7 +153,7 @@ const EditPreview = () => {
           />
         </BlockEditor>
 
-        <BlockEditor
+        {/* <BlockEditor
           settingsRender={() => (
             <P>Select taxonomies to display in this listing.</P>
           )}
@@ -235,7 +241,7 @@ const EditPreview = () => {
             type="text"
             vol={6}
           />
-        </BlockEditor>
+        </BlockEditor> */}
 
         <ContentActions>
           <Button vol={4} variant={3} tone={3}>
@@ -243,17 +249,6 @@ const EditPreview = () => {
           </Button>
         </ContentActions>
       </ContentArea>
-
-      <PreviewActions
-        className={layout.previewActions}
-        ref={previewActions}
-        focusMode={focusMode}
-        refFocusButton={focusModeButton}
-        onFocusClick={setFocusMode}
-        fullScreenMode={fullScreenMode}
-        refFullScreenButton={fullScreenModeButton}
-        onFullScreenClick={setFullScreenMode}
-      />
 
       <Preview
         className={layout.preview}
@@ -267,14 +262,16 @@ const EditPreview = () => {
           shards: [previewModes, fullScreenModeButton]
         }}
       >
-        {/* {previewMode === 1 && (
-              <PreviewMetaData
-                title={`${page.title} | British Council`}
-                description={page.description}
-                image={page.image && page.image.url}
-                slug={`https://www.britishcouncil.site${page.slug}`}
-              />
-            )} */}
+        {previewMode === 1 && (
+          <PreviewMetaData
+            title="Shelley Puma UI"
+            description="A joyfully easy to use CMS UI built upon a little known library called Shelley."
+            image="https://ik.imagekit.io/tcvka0ufln/pontoon_v3jIy64zcnwwx.jpeg?tr=w-1200,h-630,fo-auto"
+            slug="shelley.earth"
+            domain="shelley.earth"
+            fullScreenMode
+          />
+        )}
         {previewMode !== 1 && (
           <PreviewChrome {...{ previewMode, fullScreenMode }}>
             <div className={classnames(previewChrome.iframe, classes.appWrap)}>
@@ -295,6 +292,17 @@ const EditPreview = () => {
           </PreviewChrome>
         )}
       </Preview>
+
+      <PreviewActions
+        className={layout.previewActions}
+        ref={previewActions}
+        focusMode={focusMode}
+        refFocusButton={focusModeButton}
+        onFocusClick={setFocusMode}
+        fullScreenMode={fullScreenMode}
+        refFullScreenButton={fullScreenModeButton}
+        onFullScreenClick={setFullScreenMode}
+      />
 
       <PageActions
         className={layout.actions}

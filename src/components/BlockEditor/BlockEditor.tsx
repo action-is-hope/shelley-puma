@@ -127,7 +127,7 @@ const BlockEditor = ({
               }
             />
 
-            <MenuList>
+            <MenuList portal={false}>
               {messages.map(item => (
                 <P key={item.id} vol={1} className={classes.message}>
                   {item.content} {item.settings && " (settings)"}
