@@ -5,7 +5,8 @@ import { st, classes } from "./previewModes.st.css";
 
 import { InputSelection, Icon } from "@actionishope/shelley";
 
-interface PreviewModesProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface PreviewModesProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   /** Callback with modeIndex as a single arg. */
   onModeChange: (modeIndex: number) => void;
   previewMode: number;

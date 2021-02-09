@@ -23,7 +23,7 @@ export type statusOptions =
   | "unpublished";
 
 const noop = () => false;
-interface ActionProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ActionProps extends React.HTMLAttributes<HTMLDivElement> {
   status: statusOptions;
   lastSaved?: string;
   onArchive?: () => void;

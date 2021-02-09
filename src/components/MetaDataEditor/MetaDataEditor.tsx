@@ -10,13 +10,14 @@ import {
   VisuallyHidden
 } from "@actionishope/shelley";
 
-interface MetaDataProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface MetaDataProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Minimise the meta editor. */
   mini: boolean;
   mediaUploader: React.ReactNode;
   titleProps: InputTextProps;
   descriptionProps: InputTextProps;
 }
+
 const MetaDataEditor = React.forwardRef(
   (
     {
@@ -49,6 +50,9 @@ const MetaDataEditor = React.forwardRef(
                   labelVisuallyHidden
                   label={titleProps.label || "Meta title"}
                   placeholder={titleProps.placeholder || "Meta title"}
+                  default={titleProps.default}
+                  defaultValue={titleProps.defaultValue}
+                  value={titleProps.value}
                   onChange={titleProps.onChange}
                   onBlur={titleProps.onBlur}
                   onFocus={titleProps.onFocus}
@@ -62,6 +66,9 @@ const MetaDataEditor = React.forwardRef(
                   placeholder={
                     descriptionProps.placeholder || "Meta description"
                   }
+                  default={descriptionProps.default}
+                  defaultValue={descriptionProps.defaultValue}
+                  value={descriptionProps.value}
                   onChange={descriptionProps.onChange}
                   onBlur={descriptionProps.onBlur}
                   onFocus={descriptionProps.onFocus}

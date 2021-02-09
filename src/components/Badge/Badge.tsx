@@ -2,7 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import { st, classes } from "./badge.st.css";
 
-interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
+export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   badgeContent?: React.ReactNode;
   dot?: boolean;
   invisible?: boolean;

@@ -6,7 +6,7 @@ import { Toolbar, InputSelection, Icon, Button } from "@actionishope/shelley";
 import Menu from "../icons/Menu";
 import Flags from "country-flag-icons/react/3x2";
 
-interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {
   altThemeEnabled: boolean;
   toggleTheme: () => void;
 }

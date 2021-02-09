@@ -3,7 +3,7 @@ import classnames from "classnames";
 import { st, classes } from "./contentArea.st.css";
 import { FocusOn } from "react-focus-on";
 
-interface ContentAreaProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ContentAreaProps extends React.HTMLAttributes<HTMLDivElement> {
   /** See https://www.npmjs.com/package/react-focus-on */
   focusOnProps: any;
   /** Callback with boolean status as a single arg. */

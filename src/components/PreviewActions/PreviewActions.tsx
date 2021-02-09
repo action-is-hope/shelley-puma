@@ -9,7 +9,8 @@ import CompressIcon from "../icons/CompressScreen";
 
 import { Button } from "@actionishope/shelley";
 
-interface PreviewActionsProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface PreviewActionsProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   focusMode: boolean;
   refFocusButton: any;
   onFocusClick: (mode: boolean) => void;
@@ -17,6 +18,7 @@ interface PreviewActionsProps extends React.HTMLAttributes<HTMLDivElement> {
   refFullScreenButton: any;
   onFullScreenClick: (mode: boolean) => void;
 }
+
 const PreviewActions = React.forwardRef(
   (
     {

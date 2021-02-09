@@ -5,7 +5,7 @@ import { FocusOn } from "react-focus-on";
 
 import { st, classes } from "./preview.st.css";
 
-interface PreviewProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface PreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   /** See https://www.npmjs.com/package/react-focus-on */
   focusOnProps: any;
   /** Set the preview mode. */
@@ -15,6 +15,7 @@ interface PreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Callback with modeIndex as a single arg. */
   onModeChange: (modeIndex: number) => void;
 }
+
 const Preview = React.forwardRef(
   (
     {

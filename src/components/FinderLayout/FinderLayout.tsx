@@ -2,15 +2,16 @@ import React from "react";
 import classnames from "classnames";
 import { st, classes } from "./finderLayout.st.css";
 
-export interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface FinderLayoutProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   gridMode?: string | false;
 }
-const Layout = ({
+const FinderLayout = ({
   className: classNameProp,
   children,
   gridMode = false,
   ...rest
-}: LayoutProps) => {
+}: FinderLayoutProps) => {
   return (
     <div
       className={st(classnames(classes.root, classNameProp), { gridMode })}
@@ -21,4 +22,4 @@ const Layout = ({
   );
 };
 
-export default Layout;
+export default FinderLayout;
