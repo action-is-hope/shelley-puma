@@ -1,6 +1,6 @@
 {
   "name": "@actionishope/shelley-puma",
-  "version": "0.1.1-alpha.4",
+  "version": "0.1.1-alpha.9",
   "license": "ISC",
   "description": "Shelley Admin - A CMS/admin component set.",
   "repository": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/action-is-hope/shelley-puma#readme",
   "dependencies": {
-    "@actionishope/shelley": "^0.1.1-alpha.29",
+    "@actionishope/shelley": "^0.1.1-alpha.30",
     "@reach/popover": "0.12.1",
     "@types/lodash.throttle": "^4.1.6",
     "@types/react-beautiful-dnd": "^13.0.0",
