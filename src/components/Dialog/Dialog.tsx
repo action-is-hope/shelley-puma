@@ -154,7 +154,7 @@ const Dialog = React.forwardRef(
       <CSSTransition in={isOpen} {...transitionProps}>
         <div className={theme}>
           <div
-            className={st(classnames(classes.root, className), {
+            className={st(classes.root, {
               variant,
               transition
             })}

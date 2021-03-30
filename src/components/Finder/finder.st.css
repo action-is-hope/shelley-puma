@@ -69,7 +69,6 @@
   .actions,
   .previewVisibility {
     transition: filter 80ms ease-in-out, opacity 80ms ease-in-out;
-    filter: blur(0px)
   }
 
 
