@@ -30,7 +30,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  TablePagination
+  TablePagination,
 } from "@actionishope/shelley";
 
 const Finder = ({ className: classNameProp, ...rest }: any) => {
@@ -64,7 +64,7 @@ const Finder = ({ className: classNameProp, ...rest }: any) => {
     createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
     createData("Eclair", 262, 16.0, 24, 6.0),
     createData("Cupcake", 305, 3.7, 67, 4.3),
-    createData("Gingerbread", 356, 16.0, 49, 3.9)
+    createData("Gingerbread", 356, 16.0, 49, 3.9),
   ];
 
   return (
@@ -93,7 +93,7 @@ const Finder = ({ className: classNameProp, ...rest }: any) => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {rows.map(row => (
+                {rows.map((row) => (
                   <TableRow key={row.name} className={classes.row}>
                     <TableCell header scope="row">
                       <InputSelection
@@ -135,7 +135,7 @@ const Finder = ({ className: classNameProp, ...rest }: any) => {
               //   native: true
               // }}
               onPageChange={(e, num) => console.log(e, num, "yaya")}
-              onRowsPerPageChange={e => console.log(e)}
+              onRowsPerPageChange={(e) => console.log(e)}
               // ActionsComponent={TablePaginationActions}
             />
           </TableContainer>

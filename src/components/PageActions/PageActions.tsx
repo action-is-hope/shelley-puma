@@ -1,16 +1,16 @@
 import React from "react";
 import classnames from "classnames";
 import { st, classes } from "./pageActions.st.css";
-
+import { Item } from "@react-stately/collections";
 import {
   Text,
   Button,
   Icon,
-  Menu,
-  MenuList,
+  // Menu,
+  // MenuList,
   MenuButton,
   MenuItem,
-  ButtonGroup
+  ButtonGroup,
 } from "@actionishope/shelley";
 
 import { classes as spacing } from "@actionishope/shelley/styles/default/spacing.st.css";
@@ -68,18 +68,18 @@ const PageActions = React.forwardRef(
       reviewRequired: "Review Required",
       delete: "Delete",
       changeStatus: "Change status",
-      changesSaved: "Changes saved:"
+      changesSaved: "Changes saved:",
     };
 
     const lookUp = {
-      updated: { text: strings.publishChanges, onClick: onPublish },
+      updated: { text: strings.publishChanges, onPress: onPublish },
       published: {
         text: strings.publish,
-        onClick: () => noop
+        onPress: () => noop,
       },
-      unpublished: { text: strings.publish, onClick: onPublish },
-      draft: { text: strings.publish, onClick: onPublish },
-      archived: { text: strings.unArchive, onClick: onUnArchive || noop }
+      unpublished: { text: strings.publish, onPress: onPublish },
+      draft: { text: strings.publish, onPress: onPublish },
+      archived: { text: strings.unArchive, onPress: onUnArchive || noop },
     };
 
     const PageActionsMenuButton = (
@@ -90,7 +90,24 @@ const PageActions = React.forwardRef(
             <path d="M13 4v2l-5 5-5-5v-2l5 5z"></path>
           </Icon>
         }
-      />
+        onAction={(actionKey: string) => {
+          switch (actionKey) {
+            case "archive":
+              onArchive && onArchive();
+              break;
+            case "unPublish":
+              onUnPublish && onUnPublish();
+              break;
+            case "delete":
+              onDelete && onDelete();
+              break;
+          }
+        }}
+      >
+        {onArchive && <Item key="archive">{strings.Archive}</Item>}
+        {onUnPublish && <Item key="unPublish">{strings.unPublish}</Item>}
+        {onDelete && <Item key="delete">{strings.delete}</Item>}
+      </MenuButton>
     );
 
     return (
@@ -111,52 +128,24 @@ const PageActions = React.forwardRef(
             <span className={classnames(classes.led, classes[status])}></span>
             <strong>{strings.status}</strong> {strings[status]}
           </Text>
-          <Menu>
-            <ButtonGroup vol={4} tone={1} variant={3} fullWidth>
-              <Button
-                tone={reviewRequired ? 2 : 1}
-                fullWidth
-                onClick={() =>
-                  reviewRequired ? onReview() : lookUp[status].onClick()
-                }
-                disabled={status === "published" && !reviewRequired}
-              >
-                {reviewRequired ? strings.reviewRequired : lookUp[status].text}
-              </Button>
-              {PageActionsMenuButton}
-              {/* {reviewRequired ? (
+          <ButtonGroup vol={4} tone={1} fullWidth variant="primary">
+            <Button
+              tone={reviewRequired ? 2 : 1}
+              fullWidth
+              onPress={() =>
+                reviewRequired ? onReview() : lookUp[status].onPress()
+              }
+              disabled={status === "published" && !reviewRequired}
+            >
+              {reviewRequired ? strings.reviewRequired : lookUp[status].text}
+            </Button>
+            {PageActionsMenuButton}
+            {/* {reviewRequired ? (
                 <VisuallyHidden>{PageActionsMenuButton}</VisuallyHidden>
               ) : (
                 PageActionsMenuButton
               )} */}
-            </ButtonGroup>
-            <MenuList>
-              <Text as="label" uppercase vol={1}>
-                {strings.changeStatus}
-              </Text>
-              {onArchive && (
-                <MenuItem
-                  disabled={status === "archived" && true}
-                  onSelect={() => onArchive()}
-                >
-                  {strings.Archive}
-                </MenuItem>
-              )}
-              {onUnPublish && (
-                <MenuItem
-                  disabled={status === "unpublished" && true}
-                  onSelect={() => onUnPublish()}
-                >
-                  {strings.unPublish}
-                </MenuItem>
-              )}
-              {onDelete && (
-                <MenuItem onSelect={() => onDelete()}>
-                  {strings.delete}
-                </MenuItem>
-              )}
-            </MenuList>
-          </Menu>
+          </ButtonGroup>
         </div>
       </div>
     );

@@ -31,7 +31,7 @@ const Header = React.forwardRef(
         {/* <Flags.US title="United States" className={classes.flag} /> */}
         <Button
           className={classes.siteSelectButton}
-          variant={2}
+          variant="secondary"
           tone={10}
           vol={5}
           // icon={<ExpandIcon alt="Toggle full screen on" />}
@@ -58,7 +58,7 @@ const Header = React.forwardRef(
         <div className={classes.controls}>
           <InputSelection
             id="themeSelector"
-            variant={false}
+            variant={undefined}
             hint="Toggle theme mode"
             label={
               <Icon alt="Toggle theme mode">
@@ -66,10 +66,10 @@ const Header = React.forwardRef(
               </Icon>
             }
             className={classnames(selection.darkLightToggle, {
-              [selection.on]: altThemeEnabled
+              [selection.on]: altThemeEnabled,
             })}
             checked={altThemeEnabled}
-            onKeyPress={event => {
+            onKeyPress={(event) => {
               if (event.key === "Enter") {
                 toggleTheme();
               }

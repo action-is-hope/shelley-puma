@@ -51,7 +51,7 @@ const EditPreview = () => {
           // enabled: false,
           enabled: focusMode,
           onEscapeKey: () => setFocusMode(false),
-          shards: [focusModeButton]
+          shards: [focusModeButton],
           // shouldIgnore: (node: any) =>
           //   document.getElementById("__gatsby")?.contains(node)
           // document.getElementsByTagName("reach-portal")?.contains(node)
@@ -62,7 +62,7 @@ const EditPreview = () => {
           titleProps={{
             id: "title",
             label: "Meta title",
-            onChange: () => console.log("hi")
+            onChange: () => console.log("hi"),
           }}
           descriptionProps={{ id: "metaDesc", label: "Meta Description" }}
           mini={sliderScrolled}
@@ -153,24 +153,6 @@ const EditPreview = () => {
           />
         </BlockEditor>
 
-        {/* <BlockEditor
-          settingsRender={() => (
-            <P>Select taxonomies to display in this listing.</P>
-          )}
-          shards={[preview, previewModes]}
-          data-testid="test"
-        >
-          <Label>Page Title</Label>
-          <InputText
-            id="ptitle2"
-            labelVisuallyHidden
-            placeholder="Title"
-            label={"Page title"}
-            type="text"
-            vol={6}
-          />
-        </BlockEditor>
-
         <BlockEditor
           settingsRender={() => (
             <P>Select taxonomies to display in this listing.</P>
@@ -241,7 +223,25 @@ const EditPreview = () => {
             type="text"
             vol={6}
           />
-        </BlockEditor> */}
+        </BlockEditor>
+
+        <BlockEditor
+          settingsRender={() => (
+            <P>Select taxonomies to display in this listing.</P>
+          )}
+          shards={[preview, previewModes]}
+          data-testid="test"
+        >
+          <Label>Page Title</Label>
+          <InputText
+            id="ptitle2"
+            labelVisuallyHidden
+            placeholder="Title"
+            label={"Page title"}
+            type="text"
+            vol={6}
+          />
+        </BlockEditor>
 
         <ContentActions>
           <Button vol={4} variant={3} tone={3}>
@@ -259,7 +259,7 @@ const EditPreview = () => {
         focusOnProps={{
           enabled: fullScreenMode,
           onEscapeKey: () => setFullScreenMode(false),
-          shards: [previewModes, fullScreenModeButton]
+          shards: [previewModes, fullScreenModeButton],
         }}
       >
         {previewMode === 1 && (

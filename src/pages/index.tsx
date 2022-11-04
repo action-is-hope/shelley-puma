@@ -10,7 +10,7 @@ import {
   P,
   Grid,
   InputText,
-  Button
+  Button,
 } from "@actionishope/shelley";
 
 import { classes as text } from "@actionishope/shelley/styles/default/text.st.css";
@@ -36,7 +36,7 @@ interface IndexPageProps {
 const IndexPage = ({ data }: IndexPageProps) => {
   const [
     referenceElement,
-    setReferenceElement
+    setReferenceElement,
   ] = useState<HTMLButtonElement | null>(null);
 
   const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(
@@ -51,7 +51,7 @@ const IndexPage = ({ data }: IndexPageProps) => {
   const [backlogModalOpen, setBacklogModalOpen] = useState(false);
   const [modelClickAway, setModelClickAway] = useState(true);
   const toggleBacklogModal = () => {
-    setBacklogModalOpen(prevState => !prevState);
+    setBacklogModalOpen((prevState) => !prevState);
   };
 
   const [open, setOpen] = useState(false);
@@ -61,12 +61,12 @@ const IndexPage = ({ data }: IndexPageProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const toggle = () => {
-    setOpen(o => !o);
+    setOpen((o) => !o);
   };
 
   return (
     <DefaultLayout>
-      <Button variant={2} onClick={() => setBacklogModalOpen(true)}>
+      <Button variant="secondary" onPress={() => setBacklogModalOpen(true)}>
         Open
       </Button>
       <Dialog
@@ -83,7 +83,7 @@ const IndexPage = ({ data }: IndexPageProps) => {
         data-testid="modal-window"
         transitionProps={{
           timeout: 200,
-          onEnter: item => console.log(item, "Blah")
+          onEnter: (item) => console.log(item, "Blah"),
           // unmountOnExit: false
         }}
         // entryNode={false}
@@ -116,7 +116,7 @@ const IndexPage = ({ data }: IndexPageProps) => {
           <Button
             type="button"
             ref={setReferenceElement}
-            onClick={() => setOpen(o => !o)}
+            onClick={() => setOpen((o) => !o)}
           >
             Reference element
           </Button>

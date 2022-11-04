@@ -43,8 +43,8 @@ const PreviewActions = React.forwardRef(
         {children}
 
         <Button
-          onClick={() => onFocusClick(!focusMode)}
-          variant={2}
+          onPress={() => onFocusClick(!focusMode)}
+          variant="secondary"
           vol={5}
           ref={refFocusButton}
           className={classes.toggleFocusButton}
@@ -57,11 +57,11 @@ const PreviewActions = React.forwardRef(
           }
         />
         <Button
-          variant={2}
+          variant="secondary"
           vol={5}
           ref={refFullScreenButton}
           className={classes.toggleFullScreenButton}
-          onClick={() => onFullScreenClick(!fullScreenMode)}
+          onPress={() => onFullScreenClick(!fullScreenMode)}
           icon={
             !fullScreenMode ? (
               <ExpandIcon alt="Toggle full screen on" />

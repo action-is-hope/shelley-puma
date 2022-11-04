@@ -23,28 +23,25 @@
 }
 
 /* = Components */
+
 :import {
-  -st-from: "@actionishope/shelley/components/Menu/menuList.st.css";
-  -st-default: MenuList;
+  -st-from: "@actionishope/shelley/components/MenuPopup/menuPopup.st.css";
+  -st-default: MenuPopup;
 }
 
 :import {
-  -st-from: "@actionishope/shelley/components/Menu/menuItem.st.css";
+  -st-from: "@actionishope/shelley/components/MenuItem/menuItem.st.css";
   -st-default: MenuItem;
 }
 
 @st-scope Puma {
-  MenuList {
+
+  MenuPopup {
     background: var(--color-background-1);
   }
 
-  MenuItem[data-selected] {
+  MenuItem:isFocused {
     background: var(--color-menu-selected-background);
     color: var(--color-menu-selected-text);
   }
-
-  [data-reach-menu-popover] {
-    z-index: 1000;
-  }
-
 }

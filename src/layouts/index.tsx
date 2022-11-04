@@ -56,13 +56,13 @@ const DefaultLayout = ({ children }: any) => {
           {
             name: "description",
             content:
-              "React UI lib: Create something beautiful from recycled body parts."
+              "React UI lib: Create something beautiful from recycled body parts.",
           },
-          { name: "keywords", content: "sample, something" }
+          { name: "keywords", content: "sample, something" },
         ]}
         htmlAttributes={{
           lang: "en",
-          class: currentTheme
+          class: currentTheme,
         }}
       />
       <meta
@@ -81,7 +81,7 @@ const DefaultLayout = ({ children }: any) => {
           <Link
             to="/finder"
             style={{
-              textDecoration: "none"
+              textDecoration: "none",
             }}
           >
             Content
@@ -89,7 +89,7 @@ const DefaultLayout = ({ children }: any) => {
           <Link
             to="/finder"
             style={{
-              textDecoration: "none"
+              textDecoration: "none",
             }}
           >
             Media
@@ -97,7 +97,7 @@ const DefaultLayout = ({ children }: any) => {
           <Link
             to="/admin"
             style={{
-              textDecoration: "none"
+              textDecoration: "none",
             }}
           >
             Settings

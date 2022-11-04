@@ -103,20 +103,6 @@ const Dialog = React.forwardRef(
 
     React.useEffect(() => {
       entryNodeProp === "body" && setEntryNode(document.body);
-      // entryNode = document && document.body
-
-      // // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-      // const vh = window.innerHeight * 0.01;
-      // console.log("me", vh);
-      // // Then we set the value in the --vh custom property to the root of the document
-      // document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-      // // We listen to the resize event
-      // window.addEventListener("resize", () => {
-      //   // We execute the same script as before
-      //   const vh = window.innerHeight * 0.01;
-      //   document.documentElement.style.setProperty("--vh", `${vh}px`);
-      // });
     }, [entryNodeProp]);
 
     const activateFocusLock = React.useCallback(() => {
@@ -128,7 +114,7 @@ const Dialog = React.forwardRef(
     /* TransitionProps props */
     const transitionProps = {
       unmountOnExit: true,
-      ...transitionPropsInput
+      ...transitionPropsInput,
     };
     /* FocusOn props */
     const focusOnProps = {
@@ -146,7 +132,7 @@ const Dialog = React.forwardRef(
        * https://codesandbox.io/s/focus-on-lvw6p?fontsize=14&hidenavigation=1&theme=dark
        * Possible work around to use shards?
        */
-      noIsolation: !transitionProps.unmountOnExit
+      noIsolation: !transitionProps.unmountOnExit,
       // onClickOutside: () => console.log("hello")
     };
 
@@ -156,7 +142,7 @@ const Dialog = React.forwardRef(
           <div
             className={st(classes.root, {
               variant,
-              transition
+              transition,
             })}
           >
             <FocusOn {...focusOnProps}>

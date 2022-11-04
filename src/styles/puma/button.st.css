@@ -67,34 +67,34 @@
   }
 
   /* = 'Text'  */
-  Button:variant(1) {
+  Button:variant(quiet) {
     --text-color: var(--accent);
   }
 
-  Button:variant(1):hover,
-  Button:variant(1):focus {
+  Button:variant(quiet):hover,
+  Button:variant(quiet):focus {
     background-color: rgba(var(--color-ui-raw), .02);
   }
 
   /* = We need to a seperator color for when in a group. */
-  /* ButtonGroup Button:variant(1) {
+  /* ButtonGroup Button:variant(quiet) {
     --seperator-color: var(--accent);
   } */
 
   /* = We need to a seperator color for when in a group. */
-  ButtonGroup Button:variant(3) {
+  ButtonGroup Button:variant(primary) {
     --seperator-color: rgba(var(--color-ui-raw-inverse), .4);
   }
 
 
   /* = 'Outline' */
-  Button:variant(2) {
+  Button:variant(secondary) {
     --border-color: var(--accent);
     -webkit-font-smoothing: antialiased;
   }
 
   /* = 'Filled' */
-  Button:variant(3) {
+  Button:variant(primary) {
     --bg-color: var(--accent);
     --text-color: var(--color-ui-inverse);
   }
@@ -106,17 +106,17 @@
   }
 
   /* = We need to a seperator color for when in a group. */
-  ButtonGroup Button:variant(3) {
+  ButtonGroup Button:variant(primary) {
     --seperator-color: rgba(var(--color-ui-raw-inverse), .4);
   }
 
   /* = 'Floating Action Button (FAB)' - Thank you Material! */
-  Button:variant(4) {
+  Button:variant(fab) {
     --bg-color: var(--accent);
     --text-color: var(--color-ui-inverse);
   }
 
-  ButtonGroup Button:variant(4) {
+  ButtonGroup Button:variant(fab) {
     --seperator-color: rgba(var(--color-ui-raw-inverse), .4);
   }
 
